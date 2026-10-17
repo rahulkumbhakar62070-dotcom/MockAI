@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #E8E4DA;
+  }
+  body {
+    background-color: #F8F6F0;
+    color: #252923;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+    color: #252923;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Editorial Cards */
+  .editorial-card {
+    @apply rounded-2xl bg-white border border-[#E8E4DA] shadow-[0_2px_8px_-2px_rgba(37,41,35,0.05)] transition-all duration-200;
+  }
+
+  .editorial-card-hover {
+    @apply hover:border-[#245C46]/35 hover:shadow-[0_8px_24px_-4px_rgba(36,92,70,0.08)] hover:-translate-y-0.5;
+  }
+
+  /* Primary Action Button (Forest Green) */
+  .btn-forest {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#245C46] hover:bg-[#1D4A38] text-white font-medium text-sm min-h-[44px] transition-all duration-200 shadow-sm active:scale-[0.98] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Secondary Neutral Button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-[#F2EFE8] border border-[#E8E4DA] text-[#252923] hover:text-[#245C46] font-medium text-sm min-h-[44px] transition-all duration-200 shadow-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Sage Accent Button */
+  .btn-sage {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#DCE8DC] hover:bg-[#CFDECF] text-[#245C46] font-medium text-sm min-h-[44px] transition-all duration-200 cursor-pointer;
+  }
+
+  /* Form Input Fields (text-base on mobile to prevent iOS Safari auto-zoom, text-sm on sm+) */
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-xl bg-white border border-[#E8E4DA] text-[#252923] placeholder-[#777970]/60 text-base sm:text-sm min-h-[44px] focus:outline-none focus:border-[#245C46] focus:ring-2 focus:ring-[#245C46]/15 transition-all duration-200;
+  }
+
+  /* Editorial Input & Textarea */
+  .input-editorial {
+    @apply w-full px-4 py-2.5 rounded-xl bg-white border border-[#E8E4DA] text-[#252923] placeholder-[#777970]/60 text-base sm:text-sm focus:outline-none focus:border-[#245C46] focus:ring-2 focus:ring-[#245C46]/15 transition-all duration-200;
+  }
+
+  /* Status Badges */
+  .badge-sage {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#DCE8DC] text-[#245C46] border border-[#245C46]/20;
+  }
+
+  .badge-orange {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#E99564]/15 text-[#C9713C] border border-[#E99564]/30;
+  }
+}
+
+/* Ensure long words and code strings wrap safely across all containers */
+p, h1, h2, h3, h4, h5, h6, span, div, pre, code {
+  overflow-wrap: anywhere;
+}
+
+/* Restrained Editorial Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8E4DA;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #245C46;
+}
